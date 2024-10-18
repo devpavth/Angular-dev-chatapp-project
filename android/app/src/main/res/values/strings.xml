@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ChatApp</string>
+    <string name="title_activity_main">ChatApp</string>
+    <string name="package_name">io.ionic.starter</string>
+    <string name="custom_url_scheme">io.ionic.starter</string>
+
+    
+
+    <string name="publishable_key">pk_test_YssveZBA1kucfaTfZbeDwauN</string>
+    <bool name="enable_google_pay">true</bool>
+    <string name="country_code">IN</string>
+    <string name="merchant_display_name">Widget Store</string>
+    <bool name="google_pay_is_testing">true</bool>
+</resources>
