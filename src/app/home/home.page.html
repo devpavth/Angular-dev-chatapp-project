@@ -1,20 +1,37 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-fab slot="fixed" vertical="bottom" horizontal="end">
+  <ion-fab-button (click)="openChatModal()">
+    <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<!-- <div class="main-container">
+  <div class="left-section">
+    <app-left-section (sectionSelected)="onSectionSelected($event)"></app-left-section> 
   </div>
-</ion-content>
+
+  <div class="right-section">
+    <app-right-section [activeSection]="activeSection"></app-right-section>
+    <button *ngIf="activeSection" (click)="onBackButtonClicked()">Back</button>
+  </div>
+</div> -->
+
+<div class="desktopView">
+    <div class="left-section">
+      <app-left-section (sectionSelected)="onSectionSelected($event)"></app-left-section> 
+    </div>
+    <div class="right-section">
+      <app-right-section [activeSection]="activeSection"></app-right-section>
+    </div>
+</div> 
+
+<div class="mobileView">
+    <div class="left-section" *ngIf="!isRightSectionVisible">
+      <app-left-section (sectionSelected)="onSectionSelected($event)"></app-left-section> 
+    </div>
+    <div class="right-section" [ngClass]="{'show': isRightSectionVisible}">
+      <!-- <div class="header">
+        <button (click)="onBackButtonClicked()">Back</button>
+      </div> -->
+      <app-right-section [activeSection]="activeSection" (backButtonClicked)="onBackButtonClicked()"></app-right-section>
+    </div>
+</div> 
