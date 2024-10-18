@@ -1,0 +1,28 @@
+ion-button{
+    // --background: #e9f8fd; 
+    --color: #e9f8fd; 
+    --background: #00008B; 
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 20px;
+    // width: 400px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    width: 30%;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    height: 100vh;
+    padding-top: 20px; 
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-expand {
+      width: 100%;
+    }
+  }

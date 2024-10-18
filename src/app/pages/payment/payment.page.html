@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Stripe Payment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  class="ion-padding">
+  <!-- <ion-button (click)="navigateToPayment()">
+    Go to Payment Page
+  </ion-button>   -->
+
+  <div class="button-container">
+    <ion-button class="mobile-expand ion-margin-top" (click)="paymentSheet()">Payment Sheet</ion-button>
+    <ion-button class="mobile-expand ion-margin-top" (click)="paymentFlow()">Payment Flow</ion-button>
+    <ion-button class="mobile-expand ion-margin-top" (click)="applePay()">Apple Pay</ion-button>
+    <ion-button class="mobile-expand ion-margin-top" (click)="googlePay()">Google Pay</ion-button>
+  </div>
+  <!-- <ion-button (click)="startStripePayment()">Pay with Stripe</ion-button> -->
+</ion-content>
