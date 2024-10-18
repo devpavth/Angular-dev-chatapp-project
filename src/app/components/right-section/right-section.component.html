@@ -1,0 +1,17 @@
+<div id="main-content">
+  <ng-container *ngIf="activeSection === 'user'">
+    <app-user-section (backButtonClicked)="onBackButtonClicked()"></app-user-section>
+  </ng-container>
+  <ng-container *ngIf="activeSection === 'experience'">
+    <app-experience-section (backButtonClicked)="onBackButtonClicked()"></app-experience-section>
+  </ng-container>
+  <ng-container *ngIf="activeSection === 'destination'">
+    <app-destination-section (backButtonClicked)="onBackButtonClicked()"></app-destination-section>
+  </ng-container>
+  <ng-container *ngIf="activeSection === 'event'">
+    <app-event-section (backButtonClicked)="onBackButtonClicked()"></app-event-section>
+  </ng-container>
+</div>
+<!-- <ion-content>
+  <p>Right Section is working!</p>
+</ion-content> -->

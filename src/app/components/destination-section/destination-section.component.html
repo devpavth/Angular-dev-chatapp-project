@@ -1,0 +1,21 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="onBackButtonClicked()">
+        <ion-icon class="hide-back-button" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Destination Section</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let destination of destinations">
+      <ion-label>
+        <h2>{{ destination.place }}</h2>
+        <p>{{ destination.country }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

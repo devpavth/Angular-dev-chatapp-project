@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="onBackButtonClicked()">
+        <ion-icon  class="hide-back-button" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>User Section</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let user of users">
+      <ion-card-content>
+        <div class="card-container">
+          <div class="card-left">
+            <ion-avatar>
+              <ion-img [src]="user.avatar"></ion-img>
+            </ion-avatar>
+            <div class="card-info">
+              <ion-card-title>{{ user.name }}</ion-card-title>
+              <ion-card-subtitle>{{ user.position }}</ion-card-subtitle>
+            </div>
+          </div>
+          <div class="card-right">
+            <ion-button (click)="toggleFollow(user)">
+              {{user.isFollowing ? 'Following' : 'Follow'}}
+            </ion-button>
+            <ion-button >Share Profile</ion-button>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
+
