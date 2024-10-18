@@ -1,3 +1,39 @@
 <ion-app>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>
+
+
+<div *ngFor="let user of users">
+  <p>{{ user.name }} (Age: {{ user.age }})</p>
+</div>
+
+<div class="button-container">
+  <ion-button (click)="sendData()">Send Data</ion-button>
+</div>
+
+<div class="button-container">
+  <ion-input class="file-input" type="file" (change)="onFileSelected($event)"></ion-input>
+  <ion-button class="upload-button" (click)="uploadImage()">Upload Image</ion-button>
+
+  <div *ngIf="uploadedImageUrl" style="text-align: center;">
+    <p>Uploaded Image URL: 
+      <ion-button href="{{ uploadedImageUrl }}" target="_blank" rel="noopener noreferrer">
+        {{ uploadedImageUrl }}
+      </ion-button>
+    </p>
+    <img [src]="uploadedImageUrl" alt="Uploaded Image" width="300" style="display: block; margin: 0 auto;">
+  </div>
+</div>
+
+<div class="button-container">
+  <h3>Select a video to upload:</h3>
+  <ion-input class="file-input" type="file" (change)="onVideoFileSelected($event)" accept="video/*"></ion-input>
+  <ion-button class="upload-button" (click)="uploadVideo()">Upload Video</ion-button>
+  <div *ngIf="uploadedVideoUrl">
+    <h4>Video uploaded to Cloudinary:</h4>
+    <video width="400" controls class="uploaded-video">
+      <source [src]="uploadedVideoUrl" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
